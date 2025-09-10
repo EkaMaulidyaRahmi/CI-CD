@@ -37,12 +37,12 @@ jobs:
 
      - name: Build Docker image
        run: |
-         docker build -t ${{ secrets.DOCKER_USERNAME }}/flask-mysql-app:latest .
+         docker build -t ekamaulidya/flask-mysql-app:latest .
 
      - name: Login to Docker Hub
        run: |
-         echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
+         echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u ekamaulidya --password-stdin
 
      - name: Push Docker image
        run: |
-         docker push ${{ secrets.DOCKER_USERNAME }}/flask-mysql-app:latest
+         docker push ekamaulidya/flask-mysql-app:latest
